@@ -1,0 +1,20 @@
+﻿@model IEnumerable<LoanMgmtSystem.Models.LoanOffers>
+
+<table class="table">
+    <tr> 
+        <th colspan="2" style="font-size:large"> Loan Offers -</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="font-size:medium">
+            <td>
+                @Html.DisplayFor(modelItem => item.OfferId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfferName)
+            </td>
+        </tr>
+        <tr></tr>
+    }
+</table>
+

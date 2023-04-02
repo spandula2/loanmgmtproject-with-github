@@ -1,0 +1,48 @@
+﻿@model IEnumerable<LoanMgmtSystem.Models.LoanOffers>
+
+@{
+    ViewBag.Title = "LoanOffers";
+}
+
+<head>
+    <style type="text/css">
+        .Form-back {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<div class="Form-back">
+    <h2>Loan Offers</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "InsertOffers")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OfferId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfferName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OfferId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OfferName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "UpdateOffers", new { id = item.OfferId }) | 
+                    @Html.ActionLink("Delete", "DeleteOffers", new { id = item.OfferId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
